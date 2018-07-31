@@ -10,7 +10,7 @@ public class Phone {
     }
 
     public boolean batteryStatus(boolean res) {
-        if (res = true) {
+        if (res == true) {
             System.out.println("Battery is full");
         } else {
             System.out.println("Low battery");
