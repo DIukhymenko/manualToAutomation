@@ -9,5 +9,8 @@
         <module name="DS_DI" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DS_DI" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
