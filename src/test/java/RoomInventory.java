@@ -10,7 +10,4 @@ public class RoomInventory {
         roomPhone.batteryStatus(false);
         roomPhone.call();
     }
-
-
-
 }
