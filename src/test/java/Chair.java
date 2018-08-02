@@ -12,8 +12,8 @@ public class Chair implements Creature{
     }
 
     public void print(PrintStream out){
-        System.out.println("Chair color is - " + color);
-        System.out.println("Legs count - " + legs);
-        System.out.println("Chair shape is - " + shape);
+        out.println("Chair color is - " + color);
+        out.println("Legs count - " + legs);
+        out.println("Chair shape is - " + shape);
     }
 }

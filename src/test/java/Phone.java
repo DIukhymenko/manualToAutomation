@@ -21,6 +21,6 @@ public class Phone implements Creature{
     }
 
     public void print(PrintStream out){
-        System.out.println("You have chosen " + phoneType + " phone");
+        out.println("You have chosen " + phoneType + " phone");
     }
 }
