@@ -1,4 +1,5 @@
 import java.io.PrintStream;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 public class Phone implements Creature{
@@ -6,9 +7,13 @@ public class Phone implements Creature{
     long battery = TimeUnit.HOURS.toMillis(24);
     int callsCount;
     long callReduce = TimeUnit.SECONDS.toMillis(100);
-    long curTime = System.currentTimeMillis();
-    long batteryPercentage = ((battery - curTime - (callsCount * callReduce)));
 
+    Calendar rightNow = Calendar.getInstance();
+    long offset = rightNow.get(Calendar.ZONE_OFFSET) +
+            rightNow.get(Calendar.DST_OFFSET);
+    long sinceMidnight = (rightNow.getTimeInMillis() + offset) %
+            (24 * 60 * 60 * 1000);
+    long batteryPercentage = (100*((battery - sinceMidnight - (callsCount * callReduce))))/battery;
 
     public Phone(String phoneType, int callsCount) {
         this.phoneType = phoneType;
@@ -22,7 +27,6 @@ public class Phone implements Creature{
     public long batteryStatus() {
         if (batteryPercentage > 0) {
             System.out.println("battery is " + batteryPercentage + "%");
-            //callsCount++;
         } else {
             System.out.println("Bye Bye!");
         }
