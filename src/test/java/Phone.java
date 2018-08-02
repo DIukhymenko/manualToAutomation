@@ -1,4 +1,6 @@
-public class Phone {
+import java.io.PrintStream;
+
+public class Phone implements Creature{
     String phoneType;
 
     public Phone(String phoneType) {
@@ -18,7 +20,7 @@ public class Phone {
         return res;
     }
 
-    public void print(){
+    public void print(PrintStream out){
         System.out.println("You have chosen " + phoneType + " phone");
     }
 }
