@@ -1,5 +1,4 @@
 import java.io.PrintStream;
-import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 public class Phone implements Creature{
@@ -7,8 +6,6 @@ public class Phone implements Creature{
     long battery = TimeUnit.HOURS.toMillis(1);
     int callsCount;
     double callReduce = (battery*2)/100; //2% from 1 hour
-
-    long currDate = System.currentTimeMillis();
     long objectCreationDate;
 
     public Phone(String phoneType) {
@@ -22,8 +19,7 @@ public class Phone implements Creature{
     }
 
     public long batteryPercentage() {
-        long batteryPercentage = (long) ((100*((battery - (currDate - objectCreationDate) - (callsCount * callReduce))))/battery);
-        return batteryPercentage;
+        return (long) ((100*((battery - (System.currentTimeMillis() - objectCreationDate) - (callsCount * callReduce))))/battery);
     }
 
     public void print(PrintStream out){

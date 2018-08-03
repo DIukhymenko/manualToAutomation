@@ -13,7 +13,7 @@ public class RoomInventory {
         Chair roomChair = new Chair("red", 3, "bubble");
         Chair roomChair2 = new Chair("yellow", 13, "rectangle");
         Phone roomPhone = new Phone("mobile");
-        Thread.sleep(120000);
+        Thread.sleep(10000);
         roomPhone.call("380990288777");
         roomPhone.call("380674737213");
         roomPhone.call("123123123");
