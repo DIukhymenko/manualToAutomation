@@ -4,32 +4,25 @@ import java.util.concurrent.TimeUnit;
 
 public class Phone implements Creature{
     String phoneType;
-    long battery = TimeUnit.HOURS.toMillis(24);
+    long battery = TimeUnit.HOURS.toMillis(1);
     int callsCount;
-    long callReduce = TimeUnit.SECONDS.toMillis(100);
+    double callReduce = (battery*2)/100; //2% from 1 hour
 
-    Calendar rightNow = Calendar.getInstance();
-    long offset = rightNow.get(Calendar.ZONE_OFFSET) +
-            rightNow.get(Calendar.DST_OFFSET);
-    long sinceMidnight = (rightNow.getTimeInMillis() + offset) %
-            (24 * 60 * 60 * 1000);
-    long batteryPercentage = (100*((battery - sinceMidnight - (callsCount * callReduce))))/battery;
+    long currDate = System.currentTimeMillis();
+    long objectCreationDate;
 
-    public Phone(String phoneType, int callsCount) {
+    public Phone(String phoneType) {
         this.phoneType = phoneType;
-        this.callsCount = callsCount;
+        this.objectCreationDate = System.currentTimeMillis();
     }
 
     public void call(String number) {
         System.out.println("Dialing - " + number);
+        callsCount++;
     }
 
-    public long batteryStatus() {
-        if (batteryPercentage > 0) {
-            System.out.println("battery is " + batteryPercentage + "%");
-        } else {
-            System.out.println("Bye Bye!");
-        }
+    public long batteryPercentage() {
+        long batteryPercentage = (long) ((100*((battery - (currDate - objectCreationDate) - (callsCount * callReduce))))/battery);
         return batteryPercentage;
     }
 
