@@ -5,7 +5,7 @@ public class Phone implements Creature{
     String phoneType;
     long battery = TimeUnit.HOURS.toMillis(1);
     int callsCount;
-    double callReduce = (battery*2)/100; //2% from 1 hour
+    int callReduce = 2;
     long objectCreationDate;
 
     public Phone(String phoneType) {
@@ -19,7 +19,7 @@ public class Phone implements Creature{
     }
 
     public long batteryPercentage() {
-        return (long) ((100*((battery - (System.currentTimeMillis() - objectCreationDate) - (callsCount * callReduce))))/battery);
+        return ((100*((battery - (System.currentTimeMillis() - objectCreationDate))))/battery)  - (callsCount * callReduce);
     }
 
     public void print(PrintStream out){
