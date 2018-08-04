@@ -1,6 +1,6 @@
 import java.io.PrintStream;
 
-public class Chair implements Creature{
+public class Chair implements Inventory{
     protected String color;
     protected int legs;
     protected String shape;

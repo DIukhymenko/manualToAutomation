@@ -1,6 +1,6 @@
 import java.io.PrintStream;
 
-public class Table implements Creature{
+public class Table implements Inventory{
     protected String color;
     protected int height;
 

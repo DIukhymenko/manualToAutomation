@@ -1,13 +1,8 @@
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 
-public class RoomInventory {
-
-    public void prCr(PrintStream out, Creature... creature){
-        for (Creature creatures: creature){
-            creatures.print(out);
-        }
-    }
-
+public class App {
     public static void main(String args[]) throws FileNotFoundException, InterruptedException {
         Table roomTable = new Table("green", 15);
         Chair roomChair = new Chair("red", 3, "bubble");
@@ -19,8 +14,7 @@ public class RoomInventory {
         roomPhone.call("123123123");
         System.out.println(roomPhone.batteryPercentage());
         PrintStream myFile = new PrintStream(new FileOutputStream("we.txt", false));
-        RoomInventory rI = new RoomInventory();
+        Room rI = new Room();
         rI.prCr(myFile, roomTable, roomChair, roomChair2);
-   }
-
+    }
 }

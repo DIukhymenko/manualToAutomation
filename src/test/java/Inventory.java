@@ -1,6 +1,6 @@
 import java.io.PrintStream;
 
-public interface Creature {
+public interface Inventory {
 
     /**
      * Describe itself.

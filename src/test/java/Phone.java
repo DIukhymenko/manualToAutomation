@@ -1,7 +1,7 @@
 import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
-public class Phone implements Creature{
+public class Phone implements Inventory{
     String phoneType;
     long battery = TimeUnit.HOURS.toMillis(1);
     int callsCount;
