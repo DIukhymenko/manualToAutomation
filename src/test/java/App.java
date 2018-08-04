@@ -9,6 +9,7 @@ public class App {
         Chair roomChair2 = new Chair("yellow", 13, "rectangle");
         Phone roomPhone = new Phone("mobile");
         AttendeesInventory a1 = new AttendeesInventory("macbook", 3, true);
+        AttendeesInventory a2 = new AttendeesInventory("DELL", 14, false);
 //        Thread.sleep(10000);
 //        roomPhone.call("380990288777");
 //        roomPhone.call("380674737213");
@@ -16,6 +17,6 @@ public class App {
 //        System.out.println(roomPhone.batteryPercentage());
         PrintStream myFile = new PrintStream(new FileOutputStream("we.txt", false));
         Room rI = new Room();
-        rI.prCr(myFile, roomTable, roomChair, roomChair2, a1);
+        rI.prCr(myFile, roomTable, roomChair, roomChair2, a1, a2);
     }
 }
