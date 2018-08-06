@@ -17,7 +17,8 @@ public class App {
                 System.out.println(roomPhone.batteryPercentage());
         PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
         Attendee a1 = new Attendee("Jhon", "MAC", 4);
-        Room r1 = new Room("qwqeqee", "qzfggxgwe", 12, "fafsafsa", a1);
+        Room r1 = new Room("qwqeqee", "qzfggxgwe", 12, "fafsafsa");
+        r1.join(a1);
         List<Room> roomList = new ArrayList<Room>();
         roomList.add(r1);
         myFile.println(r1);
