@@ -25,5 +25,10 @@ public class Room {
             roomChair.print(output);
         }
         phone.print(output);
+        for (Attendee attendee: attendees){
+            for (Inventory item: attendee.inventory()){
+             item.print(output);
+            }
+        }
     }
 }

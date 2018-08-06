@@ -1,20 +1,13 @@
 public class Attendee {
-    private String name;
-    private String laptop;
-    private int sheetsCounts;
+    final Laptop laptop;
+    final Mobile mobile;
 
-    public Attendee(String name, String laptop, int sheetsCounts) {
-        this.name = name;
+    public Attendee(Laptop laptop, Mobile mobile) {
         this.laptop = laptop;
-        this.sheetsCounts = sheetsCounts;
+        this.mobile = mobile;
     }
 
-    @Override public String toString() {
-        return "Attendee{" + "name='" + name + '\'' + ", laptop='" + laptop + '\'' + ", sheetsCounts=" + sheetsCounts
-                + '}';
+    public Inventory[] inventory() {
+        return new Inventory[0];
     }
-
-    public void attInv2(String name) {
-            System.out.println(name);
-        }
 }
