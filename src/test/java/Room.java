@@ -3,33 +3,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
-    final String table;
-    final String chair;
-    final int chairCount;
-    final String phone;
+    final Table table;
+    final Chair[] chairs;
+    final Phone phone;
     final List<Attendee> attendees;
 
-    public Room(String table, String chair, int chairCount, String phone) {
+    public Room(Table table, Chair[] chair, Phone phone) {
         this.table = table;
-        this.chair = chair;
-        this.chairCount = chairCount;
+        this.chairs = chair;
         this.phone = phone;
         this.attendees = new ArrayList<Attendee>();
-    }
-
-    public void prCr(PrintStream out, Inventory... inventory) {
-        for (Inventory inventories : inventory) {
-            inventories.print(out);
-        }
-    }
-
-    @Override public String toString() {
-        return "Room{" + "table='" + table + '\'' + ", chair='" + chair + '\'' + ", chairCount=" + chairCount
-                + ", phone='" + phone + '\'' + '}';
     }
 
     public void join(Attendee attendee) {
         this.attendees.add(attendee);
     }
 
+    public void describeInventory(PrintStream output) {
+        table.print(output);
+        for (Chair roomChair: chairs){
+            roomChair.print(output);
+        }
+        phone.print(output);
+    }
 }
