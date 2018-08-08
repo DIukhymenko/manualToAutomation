@@ -8,7 +8,6 @@ public class Attendee {
     }
 
     public Inventory[] inventory() {
-        Inventory[] attInv = {laptop, mobile};
-        return attInv;
+        return new Inventory[] {mobile, laptop};
     }
 }

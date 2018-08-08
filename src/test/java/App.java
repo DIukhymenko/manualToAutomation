@@ -18,10 +18,10 @@ public class App {
         roomPhone.call("123123123");
         System.out.println(roomPhone.batteryPercentage());
         PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
-        Attendee a1 = new Attendee(laptop1, mobile1);
+        Attendee firstAttendee = new Attendee(laptop1, mobile1);
         Attendee a2 = new Attendee(laptop2, mobile2);
         Room r1 = new Room(roomTable, new Chair[]{roomChair, roomChair2}, roomPhone);
-        r1.join(a1);
+        r1.join(firstAttendee);
         r1.describeInventory(myFile);
     }
 }
