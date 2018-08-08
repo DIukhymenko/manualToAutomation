@@ -1,13 +1,11 @@
 public class Attendee {
-    final Laptop laptop;
-    final Mobile mobile;
+    final Inventory[] attInv;
 
-    public Attendee(Laptop laptop, Mobile mobile) {
-        this.laptop = laptop;
-        this.mobile = mobile;
+    public Attendee(Inventory[] attInv) {
+        this.attInv = attInv;
     }
 
     public Inventory[] inventory() {
-        return new Inventory[] {mobile, laptop};
+        return attInv;
     }
 }
