@@ -1,7 +1,7 @@
 public class Attendee {
     final Inventory[] attInv;
 
-    public Attendee(Inventory[] attInv) {
+    public Attendee(Inventory... attInv) {
         this.attInv = attInv;
     }
 
