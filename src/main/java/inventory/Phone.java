@@ -1,3 +1,5 @@
+package inventory;
+
 import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 

@@ -1,3 +1,8 @@
+package app;
+
+import attendies.Attendee;
+import inventory.*;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;

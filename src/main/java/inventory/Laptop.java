@@ -1,3 +1,5 @@
+package inventory;
+
 import java.io.PrintStream;
 
 public class Laptop implements Inventory {
@@ -8,6 +10,6 @@ public class Laptop implements Inventory {
     }
 
     public void print(PrintStream out) {
-        out.println("Laptop - " + laptop);
+        out.println("inventory.Laptop - " + laptop);
     }
 }

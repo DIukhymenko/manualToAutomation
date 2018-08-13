@@ -1,3 +1,11 @@
+package app;
+
+import attendies.Attendee;
+import inventory.Chair;
+import inventory.Inventory;
+import inventory.Phone;
+import inventory.Table;
+
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;

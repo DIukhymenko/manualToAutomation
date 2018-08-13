@@ -1,3 +1,7 @@
+package attendies;
+
+import inventory.Inventory;
+
 public class Attendee {
     final Inventory[] attInv;
 

@@ -1,3 +1,5 @@
+package inventory;
+
 import java.io.PrintStream;
 
 public class NoteBook implements Inventory {
