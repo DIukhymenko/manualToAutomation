@@ -1,6 +1,6 @@
-package attendies;
+package com.automation_boss.attendies;
 
-import inventory.Inventory;
+import com.automation_boss.inventory.Inventory;
 
 public class Attendee {
     final Inventory[] attInv;

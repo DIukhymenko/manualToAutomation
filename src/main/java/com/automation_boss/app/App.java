@@ -1,7 +1,8 @@
-package app;
+package com.automation_boss.app;
 
-import attendies.Attendee;
-import inventory.*;
+import com.automation_boss.area.Room;
+import com.automation_boss.attendies.Attendee;
+import com.automation_boss.inventory.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

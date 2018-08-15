@@ -1,4 +1,4 @@
-package inventory;
+package com.automation_boss.inventory;
 
 import java.io.PrintStream;
 

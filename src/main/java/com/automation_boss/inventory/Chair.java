@@ -1,4 +1,4 @@
-package inventory;
+package com.automation_boss.inventory;
 
 import java.io.PrintStream;
 
@@ -14,8 +14,8 @@ public class Chair implements Inventory{
     }
 
     public void print(PrintStream out){
-        out.println("inventory.Chair color is - " + color);
+        out.println("Chair color is - " + color);
         out.println("Legs count - " + legs);
-        out.println("inventory.Chair shape is - " + shape);
+        out.println("Chair shape is - " + shape);
     }
 }

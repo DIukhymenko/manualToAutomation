@@ -1,4 +1,4 @@
-package inventory;
+package com.automation_boss.inventory;
 
 import java.io.PrintStream;
 
@@ -10,6 +10,6 @@ public class Laptop implements Inventory {
     }
 
     public void print(PrintStream out) {
-        out.println("inventory.Laptop - " + laptop);
+        out.println("Laptop - " + laptop);
     }
 }

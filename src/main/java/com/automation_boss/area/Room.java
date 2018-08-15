@@ -1,10 +1,10 @@
-package app;
+package com.automation_boss.area;
 
-import attendies.Attendee;
-import inventory.Chair;
-import inventory.Inventory;
-import inventory.Phone;
-import inventory.Table;
+import com.automation_boss.attendies.Attendee;
+import com.automation_boss.inventory.Chair;
+import com.automation_boss.inventory.Inventory;
+import com.automation_boss.inventory.Phone;
+import com.automation_boss.inventory.Table;
 
 import java.io.PrintStream;
 import java.util.ArrayList;

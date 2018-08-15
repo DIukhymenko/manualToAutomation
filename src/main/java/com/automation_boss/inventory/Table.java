@@ -1,4 +1,4 @@
-package inventory;
+package com.automation_boss.inventory;
 
 import java.io.PrintStream;
 
@@ -13,7 +13,7 @@ public class Table implements Inventory{
     }
 
     public void print(PrintStream out){
-        out.println("inventory.Table color is - " + color);
-        out.println("inventory.Table height is - " + height + "cm");
+        out.println("Table color is - " + color);
+        out.println("Table height is - " + height + "cm");
     }
 }
