@@ -3,7 +3,7 @@ package com.automation_boss.inventory;
 import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
-public class DeskPhone implements Inventory{
+public class DeskPhone implements Inventory, Phone{
     String phoneType;
     long battery = TimeUnit.HOURS.toMillis(1);
     int callsCount;
@@ -16,7 +16,7 @@ public class DeskPhone implements Inventory{
     }
 
     public void call(String number) {
-        System.out.println("Dialing - " + number);
+        System.out.println("Dialing from Desk Phone - " + number);
         callsCount++;
     }
 
