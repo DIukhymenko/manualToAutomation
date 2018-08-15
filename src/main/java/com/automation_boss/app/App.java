@@ -20,20 +20,22 @@ public class App {
         NoteBook firstNotebook = new NoteBook("Tetradka", 60, "yellow", "paper");
         PaperSheets firstSheetsSet = new PaperSheets(5, 50);
         DeskPhone roomDeskPhone = new DeskPhone("mobile");
-//        Thread.sleep(10000);
-//        roomDeskPhone.call("380990288777");
-//        roomDeskPhone.call("380674737213");
+        Thread.sleep(10000);
+        roomDeskPhone.call("380990288777");
+        roomDeskPhone.call("380674737213");
         roomDeskPhone.call("123123123");
         mobile1.call("8888888888");
+        mobile1.call("777777");
+        mobile1.call("6666666666");
         roomDeskPhone.contactsList("Vasya", "Petya");
         mobile1.contactsList("qwe", "qwe", "afssfaf");
-//        System.out.println(roomDeskPhone.batteryPercentage());
-//        PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
-//        Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
-//        Attendee secondAttendee = new Attendee(laptop2, mobile2, firstSheetsSet);
-//        Room r1 = new Room(roomTable, new Chair[]{roomChair, roomChair2}, roomDeskPhone);
-//        r1.join(firstAttendee);
-//        r1.join(secondAttendee);
-//        r1.describeInventory(myFile);
+        System.out.println(mobile1.batteryPercentage());
+        PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
+        Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
+        Attendee secondAttendee = new Attendee(laptop2, mobile2, firstSheetsSet);
+        Room r1 = new Room(roomTable, new Chair[]{roomChair, roomChair2}, roomDeskPhone);
+        r1.join(firstAttendee);
+        r1.join(secondAttendee);
+        r1.describeInventory(myFile);
     }
 }
