@@ -20,6 +20,11 @@ public class DeskPhone implements Inventory, Phone{
         callsCount++;
     }
 
+    public void contactsList(String... contacts) {
+        for (String cont: contacts)
+            System.out.println("Desk Phone contacts: " + cont);
+    }
+
     public long batteryPercentage() {
         return ((100*((battery - (System.currentTimeMillis() - objectCreationDate))))/battery)  - (callsCount * callReduce);
     }

@@ -25,6 +25,8 @@ public class App {
 //        roomDeskPhone.call("380674737213");
         roomDeskPhone.call("123123123");
         mobile1.call("8888888888");
+        roomDeskPhone.contactsList("Vasya", "Petya");
+        mobile1.contactsList("qwe", "qwe", "afssfaf");
 //        System.out.println(roomDeskPhone.batteryPercentage());
 //        PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
 //        Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);

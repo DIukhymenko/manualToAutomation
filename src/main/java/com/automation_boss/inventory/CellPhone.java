@@ -9,6 +9,11 @@ public class CellPhone implements Inventory, Phone {
         System.out.println("Dialing from cellPhone - " + number);
     }
 
+    public void contactsList(String... contacts) {
+        for (String cont: contacts)
+            System.out.println("Cell Phone contacts: " + cont);
+    }
+
     public CellPhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
