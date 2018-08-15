@@ -2,7 +2,7 @@ package com.automation_boss.inventory;
 
 import java.io.PrintStream;
 
-public class Chair implements Inventory{
+public class Chair implements Inventory {
     protected String color;
     protected int legs;
     protected String shape;
@@ -13,7 +13,7 @@ public class Chair implements Inventory{
         this.shape = shape;
     }
 
-    public void print(PrintStream out){
+    public void print(PrintStream out) {
         out.println("Chair color is - " + color);
         out.println("Legs count - " + legs);
         out.println("Chair shape is - " + shape);

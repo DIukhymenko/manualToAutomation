@@ -1,9 +1,8 @@
 package com.automation_boss.inventory;
 
 import java.io.PrintStream;
-import java.util.concurrent.TimeUnit;
 
-public class DeskPhone implements Inventory, Phone{
+public class DeskPhone implements Inventory, Phone {
     String phoneType;
     int callsCount;
 
@@ -17,11 +16,11 @@ public class DeskPhone implements Inventory, Phone{
     }
 
     public void contactsList(String... contacts) {
-        for (String cont: contacts)
+        for (String cont : contacts)
             System.out.println("Desk Phone contacts: " + cont);
     }
 
-     public void print(PrintStream out){
+    public void print(PrintStream out) {
         out.println("You have chosen " + phoneType + " phone");
     }
 }

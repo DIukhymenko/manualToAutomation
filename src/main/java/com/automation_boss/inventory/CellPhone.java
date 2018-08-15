@@ -7,21 +7,21 @@ public class CellPhone implements Inventory, Phone {
     protected String mobilePhone;
     protected int callReduce = 2;
     protected long battery = TimeUnit.HOURS.toMillis(1);
-    long objectCreationDate;
     protected int callsCount;
+    long objectCreationDate;
 
     public CellPhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         this.objectCreationDate = System.currentTimeMillis();
     }
 
-    public void call(String  number){
+    public void call(String number) {
         System.out.println("Dialing from cellPhone - " + number);
         callsCount++;
     }
 
     public void contactsList(String... contacts) {
-        for (String cont: contacts)
+        for (String cont : contacts)
             System.out.println("Cell Phone contacts: " + cont);
     }
 
@@ -30,7 +30,8 @@ public class CellPhone implements Inventory, Phone {
     }
 
     public long batteryPercentage() {
-        return ((100*((battery - (System.currentTimeMillis() - objectCreationDate))))/battery)  - (callsCount * callReduce);
+        return ((100 * ((battery - (System.currentTimeMillis() - objectCreationDate)))) / battery) - (callsCount
+                * callReduce);
     }
 
 }

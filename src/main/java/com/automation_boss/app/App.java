@@ -3,7 +3,6 @@ package com.automation_boss.app;
 import com.automation_boss.area.Room;
 import com.automation_boss.attendies.Attendee;
 import com.automation_boss.inventory.*;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -33,7 +32,7 @@ public class App {
         PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
         Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
         Attendee secondAttendee = new Attendee(laptop2, mobile2, firstSheetsSet);
-        Room r1 = new Room(roomTable, new Chair[]{roomChair, roomChair2}, roomDeskPhone);
+        Room r1 = new Room(roomTable, new Chair[] { roomChair, roomChair2 }, roomDeskPhone);
         r1.join(firstAttendee);
         r1.join(secondAttendee);
         r1.describeInventory(myFile);
