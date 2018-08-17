@@ -3,7 +3,6 @@ package com.automation_boss.app;
 import com.automation_boss.area.Room;
 import com.automation_boss.attendies.Attendee;
 import com.automation_boss.inventory.*;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
