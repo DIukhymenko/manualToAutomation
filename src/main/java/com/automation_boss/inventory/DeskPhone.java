@@ -1,6 +1,6 @@
 package com.automation_boss.inventory;
 
-import java.io.PrintStream;
+import java.io.*;
 
 public class DeskPhone implements Phone {
     String phoneType;
@@ -15,9 +15,14 @@ public class DeskPhone implements Phone {
         callsCount++;
     }
 
-    public void contactsList(String... contacts) {
-        for (String cont : contacts)
-            System.out.println("Desk Phone contacts: " + cont);
+    public void contactsList() throws IOException {
+        File fileWithContacts = new File("src/main/resources/contactsList.txt");
+        BufferedReader b = new BufferedReader(new FileReader(fileWithContacts));
+        String readLine = "";
+        System.out.println("Reading file using Buffered Reader");
+        while ((readLine = b.readLine()) != null) {
+            System.out.println(readLine);
+        }
     }
 
     public void print(PrintStream out) {

@@ -1,5 +1,7 @@
 package com.automation_boss.inventory;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
@@ -20,9 +22,8 @@ public class CellPhone implements Phone {
         callsCount++;
     }
 
-    public void contactsList(String... contacts) {
-        for (String cont : contacts)
-            System.out.println("Cell Phone contacts: " + cont);
+    public void contactsList() throws IOException {
+        System.out.println("qwe");
     }
 
     public void print(PrintStream out) {

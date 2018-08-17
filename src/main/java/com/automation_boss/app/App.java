@@ -5,10 +5,11 @@ import com.automation_boss.attendies.Attendee;
 import com.automation_boss.inventory.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 
 public class App {
-    public static void main(String args[]) throws FileNotFoundException, InterruptedException {
+    public static void main(String args[]) throws IOException, InterruptedException {
         Table roomTable = new Table("green", 15);
         Chair roomChair = new Chair("red", 3, "bubble");
         Chair roomChair2 = new Chair("yellow", 13, "rectangle");
@@ -26,8 +27,11 @@ public class App {
         mobile1.call("8888888888");
         mobile1.call("777777");
         mobile1.call("6666666666");
-        roomDeskPhone.contactsList("Vasya", "Petya");
-        mobile1.contactsList("qwe", "qwe", "afssfaf");
+        try {
+            roomDeskPhone.contactsList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println(mobile1.batteryPercentage());
         PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
         Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
