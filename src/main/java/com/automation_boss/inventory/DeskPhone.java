@@ -2,7 +2,7 @@ package com.automation_boss.inventory;
 
 import java.io.PrintStream;
 
-public class DeskPhone implements Inventory, Phone {
+public class DeskPhone implements Phone {
     String phoneType;
     int callsCount;
 

@@ -3,7 +3,7 @@ package com.automation_boss.inventory;
 import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
-public class CellPhone implements Inventory, Phone {
+public class CellPhone implements Phone {
     protected String mobilePhone;
     protected int callReduce = 2;
     protected long battery = TimeUnit.HOURS.toMillis(1);
