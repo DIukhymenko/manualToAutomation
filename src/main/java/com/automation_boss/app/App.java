@@ -39,5 +39,6 @@ public class App {
         r1.join(firstAttendee);
         r1.join(secondAttendee);
         r1.describeInventory(myFile);
+        
     }
 }
