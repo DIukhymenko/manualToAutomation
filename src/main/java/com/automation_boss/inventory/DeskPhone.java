@@ -1,13 +1,18 @@
 package com.automation_boss.inventory;
 
 import java.io.*;
+import java.util.Objects;
 
 public class DeskPhone implements Phone {
-    String phoneType;
-    int callsCount;
+    protected String phoneType;
+    protected int callsCount;
+    protected int weight;
+    protected String color;
 
-    public DeskPhone(String phoneType) {
+    public DeskPhone(String phoneType, int weight, String color) {
         this.phoneType = phoneType;
+        this.weight = weight;
+        this.color = color;
     }
 
     public void call(String number) {
@@ -27,5 +32,23 @@ public class DeskPhone implements Phone {
 
     public void print(PrintStream out) {
         out.println("You have chosen " + phoneType + " phone");
+    }
+
+    @Override public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        DeskPhone deskPhone = (DeskPhone) o;
+        return weight == deskPhone.weight && Objects.equals(color, deskPhone.color);
+    }
+
+    @Override public int hashCode() {
+
+        return Objects.hash(weight, color);
+    }
+
+    @Override public String toString() {
+        return "DeskPhone{" + "weight=" + weight + ", color='" + color + '\'' + '}';
     }
 }

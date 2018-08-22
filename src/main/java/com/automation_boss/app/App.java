@@ -23,7 +23,8 @@ public class App {
         NoteBook secondNotebook = new NoteBook("KrutaiaTetradka", 60, "yellow", "paper");
         PaperSheets firstSheetsSet = new PaperSheets(5, 50);
         PaperSheets secondSheetsSet = new PaperSheets(5, 50);
-        DeskPhone roomDeskPhone = new DeskPhone("mobile");
+        DeskPhone roomDeskPhone = new DeskPhone("mobile", 23, "black");
+        DeskPhone roomDeskPhone2 = new DeskPhone("mobile", 23, "black");
         //        Thread.sleep(10000);
         //        roomDeskPhone.call("380990288777");
         //        roomDeskPhone.call("380674737213");
@@ -68,6 +69,11 @@ public class App {
             System.out.println("true - " + laptop1.toString() + " - " + laptop2.toString());
         else {
             System.out.println("false - " + laptop1.toString() + " - " + laptop2.toString());
+        }
+        if (roomDeskPhone.equals(roomDeskPhone2))
+            System.out.println("true - " + roomDeskPhone.toString() + " - " + roomDeskPhone2.toString());
+        else {
+            System.out.println("false - " + roomDeskPhone.toString() + " - " + roomDeskPhone2.toString());
         }
     }
 }
