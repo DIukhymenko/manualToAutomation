@@ -34,7 +34,8 @@ public class DeskPhone implements Phone {
         out.println("You have chosen " + phoneType + " phone");
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass())
@@ -43,12 +44,14 @@ public class DeskPhone implements Phone {
         return weight == deskPhone.weight && Objects.equals(color, deskPhone.color);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
 
         return Objects.hash(weight, color);
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "DeskPhone{" + "weight=" + weight + ", color='" + color + '\'' + '}';
     }
 }
