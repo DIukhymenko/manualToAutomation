@@ -12,6 +12,7 @@ public class App {
         Table roomTable = new Table("green", 15);
         Chair roomChair = new Chair("red", 3, "bubble");
         Chair roomChair2 = new Chair("yellow", 13, "rectangle");
+        Chair roomChair3 = new Chair("yellow", 13, "rectangle");
         Laptop laptop1 = new Laptop("LAPTOP1");
         Laptop laptop2 = new Laptop("LAPTOP2");
         CellPhone mobile1 = new CellPhone("MOB1");
@@ -39,6 +40,10 @@ public class App {
         r1.join(firstAttendee);
         r1.join(secondAttendee);
         r1.describeInventory(myFile);
-        
+        if (roomChair.equals(roomChair2))
+            System.out.println("true - " + roomChair.toString() + " - " + roomChair2.toString());
+        else {
+            System.out.println("false - " + roomChair.toString() + " - " + roomChair2.toString());
+        }
     }
 }

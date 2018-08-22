@@ -32,4 +32,8 @@ public class Chair implements Inventory {
     @Override public int hashCode() {
         return Objects.hash(color, legs, shape);
     }
+
+    @Override public String toString() {
+        return "Chair{" + "color='" + color + '\'' + ", legs=" + legs + ", shape='" + shape + '\'' + '}';
+    }
 }
