@@ -17,8 +17,7 @@ public class Table implements Inventory {
         out.println("Table height is - " + height + "cm");
     }
 
-    @Override
-    public boolean equals(Object o) {
+    @Override public boolean equals(Object o) {
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass())
@@ -33,7 +32,8 @@ public class Table implements Inventory {
         return Objects.hash(color, height);
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "Table{" + "color='" + color + '\'' + ", height=" + height + '}';
     }
 }

@@ -20,14 +20,15 @@ public class App {
         CellPhone mobile2 = new CellPhone("MOB2");
         NoteBook firstNotebook = new NoteBook("Tetradka", 60, "yellow", "paper");
         PaperSheets firstSheetsSet = new PaperSheets(5, 50);
+        PaperSheets secondSheetsSet = new PaperSheets(5, 50);
         DeskPhone roomDeskPhone = new DeskPhone("mobile");
-        Thread.sleep(10000);
-        roomDeskPhone.call("380990288777");
-        roomDeskPhone.call("380674737213");
-        roomDeskPhone.call("123123123");
-        mobile1.call("8888888888");
-        mobile1.call("777777");
-        mobile1.call("6666666666");
+//        Thread.sleep(10000);
+//        roomDeskPhone.call("380990288777");
+//        roomDeskPhone.call("380674737213");
+//        roomDeskPhone.call("123123123");
+//        mobile1.call("8888888888");
+//        mobile1.call("777777");
+//        mobile1.call("6666666666");
         try {
             roomDeskPhone.contactsList();
         } catch (IOException e) {
@@ -50,6 +51,11 @@ public class App {
             System.out.println("true - " + roomTable.toString() + " - " + roomTableNew.toString());
         else {
             System.out.println("false - " + roomTable.toString() + " - " + roomTableNew.toString());
+        }
+        if (firstSheetsSet.equals(secondSheetsSet))
+            System.out.println("true - " + firstSheetsSet.toString() + " - " + secondSheetsSet.toString());
+        else {
+            System.out.println("false - " + firstSheetsSet.toString() + " - " + secondSheetsSet.toString());
         }
     }
 }
