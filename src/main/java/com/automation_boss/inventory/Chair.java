@@ -20,7 +20,8 @@ public class Chair implements Inventory {
         out.println("Chair shape is - " + shape);
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass())
@@ -29,7 +30,8 @@ public class Chair implements Inventory {
         return legs == chair.legs && Objects.equals(color, chair.color) && Objects.equals(shape, chair.shape);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(color, legs, shape);
     }
 

@@ -10,6 +10,7 @@ import java.io.PrintStream;
 public class App {
     public static void main(String args[]) throws IOException, InterruptedException {
         Table roomTable = new Table("green", 15);
+        Table roomTableNew = new Table("green", 15);
         Chair roomChair = new Chair("red", 3, "bubble");
         Chair roomChair2 = new Chair("yellow", 13, "rectangle");
         Chair roomChair3 = new Chair("yellow", 13, "rectangle");
@@ -44,6 +45,11 @@ public class App {
             System.out.println("true - " + roomChair.toString() + " - " + roomChair2.toString());
         else {
             System.out.println("false - " + roomChair.toString() + " - " + roomChair2.toString());
+        }
+        if (roomTable.equals(roomTableNew))
+            System.out.println("true - " + roomTable.toString() + " - " + roomTableNew.toString());
+        else {
+            System.out.println("false - " + roomTable.toString() + " - " + roomTableNew.toString());
         }
     }
 }
