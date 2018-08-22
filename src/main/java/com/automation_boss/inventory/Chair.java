@@ -35,7 +35,8 @@ public class Chair implements Inventory {
         return Objects.hash(color, legs, shape);
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "Chair{" + "color='" + color + '\'' + ", legs=" + legs + ", shape='" + shape + '\'' + '}';
     }
 }

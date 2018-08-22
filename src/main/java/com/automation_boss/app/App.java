@@ -19,6 +19,7 @@ public class App {
         CellPhone mobile1 = new CellPhone("MOB1");
         CellPhone mobile2 = new CellPhone("MOB2");
         NoteBook firstNotebook = new NoteBook("Tetradka", 60, "yellow", "paper");
+        NoteBook secondNotebook = new NoteBook("KrutaiaTetradka", 60, "yellow", "paper");
         PaperSheets firstSheetsSet = new PaperSheets(5, 50);
         PaperSheets secondSheetsSet = new PaperSheets(5, 50);
         DeskPhone roomDeskPhone = new DeskPhone("mobile");
@@ -56,6 +57,11 @@ public class App {
             System.out.println("true - " + firstSheetsSet.toString() + " - " + secondSheetsSet.toString());
         else {
             System.out.println("false - " + firstSheetsSet.toString() + " - " + secondSheetsSet.toString());
+        }
+        if (firstNotebook.equals(secondNotebook))
+            System.out.println("true - " + firstNotebook.toString() + " - " + secondNotebook.toString());
+        else {
+            System.out.println("false - " + firstNotebook.toString() + " - " + secondNotebook.toString());
         }
     }
 }
