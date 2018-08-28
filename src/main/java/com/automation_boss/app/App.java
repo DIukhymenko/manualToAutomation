@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class App {
-        public void comparisonMethod(Inventory firstElement, Inventory secondElement){
+        public void inventoryComparing(Inventory firstElement, Inventory secondElement){
             System.out.println(firstElement.equals(secondElement) + " - " + firstElement + " - " + secondElement);
         }
 
@@ -37,7 +37,9 @@ public class App {
         mobile1.call("777777");
         mobile1.call("6666666666");
         App cM = new App();
-        cM.comparisonMethod(roomDeskPhone, roomDeskPhone2);
+        cM.inventoryComparing(roomDeskPhone, roomDeskPhone2);
+        cM.inventoryComparing(firstNotebook, secondNotebook);
+        cM.inventoryComparing(mobile1, mobile2);
         try {
             roomDeskPhone.contactsList();
         } catch (IOException e) {

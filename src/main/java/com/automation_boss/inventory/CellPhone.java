@@ -10,10 +10,10 @@ public class CellPhone implements Phone {
     protected int callReduce = 2;
     protected long battery = TimeUnit.HOURS.toMillis(1);
     protected int callsCount;
-    long objectCreationDate;
     protected boolean isMP3;
     protected int weight;
     protected boolean isWaterProof;
+    long objectCreationDate;
 
     public CellPhone(String mobilePhone, boolean isMP3, int weight, boolean isWaterProof) {
         this.mobilePhone = mobilePhone;
@@ -54,7 +54,6 @@ public class CellPhone implements Phone {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(mobilePhone, isMP3, weight, isWaterProof);
     }
 

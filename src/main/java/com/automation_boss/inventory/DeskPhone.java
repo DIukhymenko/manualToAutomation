@@ -46,7 +46,6 @@ public class DeskPhone implements Phone {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(weight, color);
     }
 
