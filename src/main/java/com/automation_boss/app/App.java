@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class App {
+        public void comparisonMethod(Inventory firstElement, Inventory secondElement){
+            System.out.println(firstElement.equals(secondElement) + " - " + firstElement + " - " + secondElement);
+        }
+
     public static void main(String args[]) throws IOException, InterruptedException {
         Table roomTable = new Table("green", 15);
         Table roomTableNew = new Table("green", 15);
@@ -23,7 +27,7 @@ public class App {
         NoteBook secondNotebook = new NoteBook("KrutaiaTetradka", 60, "yellow", "paper");
         PaperSheets firstSheetsSet = new PaperSheets(5, 50);
         PaperSheets secondSheetsSet = new PaperSheets(5, 50);
-        DeskPhone roomDeskPhone = new DeskPhone("mobile", 23, "black");
+        DeskPhone roomDeskPhone = new DeskPhone("mobile", 23, "blac1k");
         DeskPhone roomDeskPhone2 = new DeskPhone("mobile", 23, "black");
         Thread.sleep(10000);
         roomDeskPhone.call("380990288777");
@@ -32,6 +36,8 @@ public class App {
         mobile1.call("8888888888");
         mobile1.call("777777");
         mobile1.call("6666666666");
+        App cM = new App();
+        cM.comparisonMethod(roomDeskPhone, roomDeskPhone2);
         try {
             roomDeskPhone.contactsList();
         } catch (IOException e) {
@@ -45,47 +51,5 @@ public class App {
         r1.join(firstAttendee);
         r1.join(secondAttendee);
         r1.describeInventory(myFile);
-        System.out.println("room Chair comparison");
-        if (roomChair.equals(roomChair2))
-            System.out.println("true - " + roomChair.toString() + " - " + roomChair2.toString());
-        else {
-            System.out.println("false - " + roomChair.toString() + " - " + roomChair2.toString());
-        }
-        System.out.println("room Table comparison");
-        if (roomTable.equals(roomTableNew))
-            System.out.println("true - " + roomTable.toString() + " - " + roomTableNew.toString());
-        else {
-            System.out.println("false - " + roomTable.toString() + " - " + roomTableNew.toString());
-        }
-        System.out.println("Sheets Set comparison");
-        if (firstSheetsSet.equals(secondSheetsSet))
-            System.out.println("true - " + firstSheetsSet.toString() + " - " + secondSheetsSet.toString());
-        else {
-            System.out.println("false - " + firstSheetsSet.toString() + " - " + secondSheetsSet.toString());
-        }
-        System.out.println("NoteBook comparison");
-        if (firstNotebook.equals(secondNotebook))
-            System.out.println("true - " + firstNotebook.toString() + " - " + secondNotebook.toString());
-        else {
-            System.out.println("false - " + firstNotebook.toString() + " - " + secondNotebook.toString());
-        }
-        System.out.println("laptop comparison");
-        if (laptop1.equals(laptop2))
-            System.out.println("true - " + laptop1.toString() + " - " + laptop2.toString());
-        else {
-            System.out.println("false - " + laptop1.toString() + " - " + laptop2.toString());
-        }
-        System.out.println("Desk Phones comparison");
-        if (roomDeskPhone.equals(roomDeskPhone2))
-            System.out.println("true - " + roomDeskPhone.toString() + " - " + roomDeskPhone2.toString());
-        else {
-            System.out.println("false - " + roomDeskPhone.toString() + " - " + roomDeskPhone2.toString());
-        }
-        System.out.println("Mobile Phones comparison");
-        if (mobile1.equals(mobile2))
-            System.out.println("true - " + mobile1.toString() + " - " + mobile2.toString());
-        else {
-            System.out.println("false - " + mobile1.toString() + " - " + mobile2.toString());
-        }
     }
 }

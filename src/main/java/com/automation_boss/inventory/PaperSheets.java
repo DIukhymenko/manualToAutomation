@@ -16,7 +16,8 @@ public class PaperSheets implements Inventory {
         out.println(count + " paper sheets with density = " + density);
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass())
@@ -25,12 +26,13 @@ public class PaperSheets implements Inventory {
         return count == that.count && density == that.density;
     }
 
-    @Override public int hashCode() {
-
+    @Override
+    public int hashCode() {
         return Objects.hash(count, density);
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "PaperSheets{" + "count=" + count + ", density=" + density + '}';
     }
 }

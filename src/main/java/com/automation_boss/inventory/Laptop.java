@@ -42,7 +42,6 @@ public class Laptop implements Inventory {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(isRetina, batterySize, monitorSize, ram, isSSD);
     }
 

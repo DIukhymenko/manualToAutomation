@@ -29,7 +29,6 @@ public class Table implements Inventory {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(color, height);
     }
 

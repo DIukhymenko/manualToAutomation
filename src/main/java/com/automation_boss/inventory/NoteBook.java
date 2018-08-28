@@ -36,7 +36,6 @@ public class NoteBook implements Inventory {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(notebook, sheetsCount, color, material);
     }
 
