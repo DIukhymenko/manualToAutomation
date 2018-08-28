@@ -40,6 +40,7 @@ public class App {
         cM.inventoryComparing(roomDeskPhone, roomDeskPhone2);
         cM.inventoryComparing(firstNotebook, secondNotebook);
         cM.inventoryComparing(mobile1, mobile2);
+        cM.inventoryComparing(mobile1, roomChair);
         try {
             roomDeskPhone.contactsList();
         } catch (IOException e) {
