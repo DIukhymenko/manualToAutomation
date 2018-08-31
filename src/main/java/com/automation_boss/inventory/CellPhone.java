@@ -6,14 +6,14 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class CellPhone implements Phone {
-    protected String mobilePhone;
-    protected int callReduce = 2;
-    protected long battery = TimeUnit.HOURS.toMillis(1);
-    protected int callsCount;
-    protected boolean isMP3;
-    protected int weight;
-    protected boolean isWaterProof;
-    long objectCreationDate;
+    private final String mobilePhone;
+    private final int callReduce = 24;
+    private final long battery = TimeUnit.HOURS.toMillis(1);
+    private int callsCount;
+    private final boolean isMP3;
+    private final int weight;
+    private final boolean isWaterProof;
+    private final long objectCreationDate;
 
     public CellPhone(String mobilePhone, boolean isMP3, int weight, boolean isWaterProof) {
         this.mobilePhone = mobilePhone;
@@ -23,9 +23,16 @@ public class CellPhone implements Phone {
         this.objectCreationDate = System.currentTimeMillis();
     }
 
-    public void call(String number) {
-        System.out.println("Dialing from cellPhone - " + number);
-        callsCount++;
+    public void call(String number) throws RuntimeException {
+        long batteryPercentage =
+                ((100 * ((battery - (System.currentTimeMillis() - objectCreationDate)))) / battery) - (callsCount
+                        * callReduce);
+        if (batteryPercentage <= 0) {
+            throw new RuntimeException("Charge your phone");
+        } else {
+            System.out.println("Dialing from cellPhone - " + number);
+            callsCount++;
+        }
     }
 
     public void contactsList() throws IOException {
@@ -34,11 +41,6 @@ public class CellPhone implements Phone {
 
     public void print(PrintStream out) {
         out.println("mobile - " + mobilePhone);
-    }
-
-    public long batteryPercentage() {
-        return ((100 * ((battery - (System.currentTimeMillis() - objectCreationDate)))) / battery) - (callsCount
-                * callReduce);
     }
 
     @Override

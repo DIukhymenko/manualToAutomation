@@ -3,7 +3,6 @@ package com.automation_boss.app;
 import com.automation_boss.area.Room;
 import com.automation_boss.attendies.Attendee;
 import com.automation_boss.inventory.*;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -33,9 +32,6 @@ public class App {
         roomDeskPhone.call("380990288777");
         roomDeskPhone.call("380674737213");
         roomDeskPhone.call("123123123");
-        mobile1.call("8888888888");
-        mobile1.call("777777");
-        mobile1.call("6666666666");
         App cM = new App();
         cM.inventoryComparing(roomDeskPhone, roomDeskPhone2);
         cM.inventoryComparing(firstNotebook, secondNotebook);
@@ -46,7 +42,6 @@ public class App {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(mobile1.batteryPercentage());
         PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
         Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
         Attendee secondAttendee = new Attendee(laptop2, mobile2, firstSheetsSet);
@@ -54,5 +49,11 @@ public class App {
         r1.join(firstAttendee);
         r1.join(secondAttendee);
         r1.describeInventory(myFile);
+        mobile1.call("8888888888");
+        mobile1.call("777777");
+        mobile1.call("6666666666");
+        mobile1.call("555555555");
+        mobile1.call("44444444");
+        mobile1.call("3333333333");
     }
 }
