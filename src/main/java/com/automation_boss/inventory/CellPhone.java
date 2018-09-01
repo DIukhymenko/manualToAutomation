@@ -24,15 +24,17 @@ public class CellPhone implements Phone {
     }
 
     public void call(String number) throws RuntimeException {
-        long batteryPercentage =
-                ((100 * ((battery - (System.currentTimeMillis() - objectCreationDate)))) / battery) - (callsCount
-                        * callReduce);
-        if (batteryPercentage <= 0) {
+        if (batteryPercentage() <= 0) {
             throw new RuntimeException("Charge your phone");
         } else {
             System.out.println("Dialing from cellPhone - " + number);
             callsCount++;
         }
+    }
+
+    public long batteryPercentage() {
+        return ((100 * ((battery - (System.currentTimeMillis() - objectCreationDate)))) / battery) - (callsCount
+                * callReduce);
     }
 
     public void contactsList() throws IOException {
