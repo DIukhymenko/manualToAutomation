@@ -3,16 +3,13 @@ package com.automation_boss.app;
 import com.automation_boss.area.Room;
 import com.automation_boss.attendies.Attendee;
 import com.automation_boss.inventory.*;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
 public class App {
-        public void inventoryComparing(Inventory firstElement, Inventory secondElement){
-            System.out.println(firstElement.equals(secondElement) + " - " + firstElement + " - " + secondElement);
-        }
-
-    public static void main(String args[]) throws IOException, InterruptedException {
+    public static void main(String args[]) throws RuntimeException, InterruptedException {
         Table roomTable = new Table("green", 15);
         Table roomTableNew = new Table("green", 15);
         Chair roomChair = new Chair("red", 3, "bubble");
@@ -40,9 +37,14 @@ public class App {
         try {
             roomDeskPhone.contactsList();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false));
+        PrintStream myFile;
+        try {
+            myFile = new PrintStream(new FileOutputStream("test.txt", false));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
         Attendee secondAttendee = new Attendee(laptop2, mobile2, firstSheetsSet);
         Room r1 = new Room(roomTable, new Chair[] { roomChair, roomChair2 }, roomDeskPhone);
@@ -55,5 +57,9 @@ public class App {
         mobile1.call("555555555");
         mobile1.call("44444444");
         mobile1.call("3333333333");
+    }
+
+    public void inventoryComparing(Inventory firstElement, Inventory secondElement) {
+        System.out.println(firstElement.equals(secondElement) + " - " + firstElement + " - " + secondElement);
     }
 }

@@ -37,7 +37,7 @@ public class CellPhone implements Phone {
                 * callReduce);
     }
 
-    public void contactsList() throws IOException {
+    public void contactsList() {
         System.out.println("qwe");
     }
 

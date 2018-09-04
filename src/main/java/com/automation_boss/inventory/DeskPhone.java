@@ -22,11 +22,11 @@ public class DeskPhone implements Phone {
 
     public void contactsList() throws IOException {
         File fileWithContacts = new File("src/main/resources/contactsList.txt");
-        BufferedReader b = new BufferedReader(new FileReader(fileWithContacts));
-        String readLine = "";
-        System.out.println("Reading file using Buffered Reader");
-        while ((readLine = b.readLine()) != null) {
-            System.out.println(readLine);
+        try (BufferedReader b = new BufferedReader(new FileReader(fileWithContacts))) {
+            String readLine;
+            while ((readLine = b.readLine()) != null) {
+                System.out.println(readLine);
+            }
         }
     }
 
