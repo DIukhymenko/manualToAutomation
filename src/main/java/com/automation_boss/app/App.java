@@ -3,13 +3,13 @@ package com.automation_boss.app;
 import com.automation_boss.area.Room;
 import com.automation_boss.attendies.Attendee;
 import com.automation_boss.inventory.*;
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
 public class App {
-    public static void main(String args[]) throws RuntimeException, InterruptedException {
+    public static void main(String args[]) throws InterruptedException {
         Table roomTable = new Table("green", 15);
         Table roomTableNew = new Table("green", 15);
         Chair roomChair = new Chair("red", 3, "bubble");
@@ -39,12 +39,14 @@ public class App {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         PrintStream myFile;
         try {
             myFile = new PrintStream(new FileOutputStream("test.txt", false));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
         Attendee secondAttendee = new Attendee(laptop2, mobile2, firstSheetsSet);
         Room r1 = new Room(roomTable, new Chair[] { roomChair, roomChair2 }, roomDeskPhone);
