@@ -9,12 +9,9 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class App {
-    public static void main(String args[]) throws InterruptedException {
-        Table roomTable = new Table("green", 15);
-        Table roomTableNew = new Table("green", 15);
+    public static void main(String args[]) {
         Chair roomChair = new Chair("red", 3, "bubble");
         Chair roomChair2 = new Chair("yellow", 13, "rectangle");
-        Chair roomChair3 = new Chair("yellow", 13, "rectangle");
         Laptop laptop1 = new Laptop("LAPTOP1", 12, true, 200, "yellow", 13, 2, true);
         Laptop laptop2 = new Laptop("LAPTOP1", 12, true, 200, "yellow", 13, 2, true);
         CellPhone mobile1 = new CellPhone("MOB1", true, 100, false);
@@ -22,10 +19,13 @@ public class App {
         NoteBook firstNotebook = new NoteBook("Tetradka", 60, "yellow", "paper");
         NoteBook secondNotebook = new NoteBook("KrutaiaTetradka", 60, "yellow", "paper");
         PaperSheets firstSheetsSet = new PaperSheets(5, 50);
-        PaperSheets secondSheetsSet = new PaperSheets(5, 50);
         DeskPhone roomDeskPhone = new DeskPhone("mobile", 23, "blac1k");
         DeskPhone roomDeskPhone2 = new DeskPhone("mobile", 23, "black");
-        Thread.sleep(10000);
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            System.out.println("Impossible to wait for 10 seconds");
+        }
         roomDeskPhone.call("380990288777");
         roomDeskPhone.call("380674737213");
         roomDeskPhone.call("123123123");
@@ -49,7 +49,12 @@ public class App {
 
         Attendee firstAttendee = new Attendee(mobile1, laptop1, firstNotebook);
         Attendee secondAttendee = new Attendee(laptop2, mobile2, firstSheetsSet);
-        Room r1 = new Room(roomTable, new Chair[] { roomChair, roomChair2 }, roomDeskPhone);
+
+        Room r1 = new Room(
+                new Table("green", 15),
+                new Chair[] { roomChair, roomChair2 },
+                roomDeskPhone
+        );
         r1.join(firstAttendee);
         r1.join(secondAttendee);
         r1.describeInventory(myFile);
