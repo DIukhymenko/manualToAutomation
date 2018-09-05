@@ -36,11 +36,11 @@ public class App {
         cM.inventoryComparing(firstNotebook, secondNotebook);
         cM.inventoryComparing(mobile1, mobile2);
         cM.inventoryComparing(mobile1, roomChair);
-        PrintStream myFile;
+        PrintStream myFile = null;
         try {
             myFile = new PrintStream(new FileOutputStream("test.txt", false));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Impossible to create file");
         }
         Attendee firstAttendee = new Attendee(
                 mobile1,
