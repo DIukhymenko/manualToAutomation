@@ -9,17 +9,13 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class App {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         DeskPhone roomDeskPhone = new DeskPhone("mobile", 23, "blac1k");
         DeskPhone roomDeskPhone2 = new DeskPhone("mobile", 23, "black");
         roomDeskPhone.call("380990288777");
         roomDeskPhone.call("380674737213");
         roomDeskPhone.call("123123123");
-        try {
-            roomDeskPhone.contactsList();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        roomDeskPhone.contactsList();
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -36,12 +32,6 @@ public class App {
         cM.inventoryComparing(firstNotebook, secondNotebook);
         cM.inventoryComparing(mobile1, mobile2);
         cM.inventoryComparing(mobile1, roomChair);
-        PrintStream myFile = null;
-        try {
-            myFile = new PrintStream(new FileOutputStream("test.txt", false));
-        } catch (IOException e) {
-            System.out.println("Impossible to create file");
-        }
         Attendee firstAttendee = new Attendee(
                 mobile1,
                 new Laptop("LAPTOP1", 12, true, 200, "yellow", 13, 2, true),
@@ -59,7 +49,11 @@ public class App {
         );
         r1.join(firstAttendee);
         r1.join(secondAttendee);
-        r1.describeInventory(myFile);
+        try (PrintStream myFile = new PrintStream(new FileOutputStream("test.txt", false))){
+            r1.describeInventory(myFile);
+        } catch (IOException e) {
+            System.out.println("Impossible to create file");
+        }
         mobile1.call("8888888888");
         mobile1.call("777777");
     }
